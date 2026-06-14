@@ -1,0 +1,23 @@
+// Design tokens, exposed as CSS custom properties so they stay
+// available at runtime (and to JS) — referenced via var(--token) everywhere.
+:root {
+  --color-bg: #0c1620;
+  --color-surface: #15232f;
+  --color-primary: #4fa3c7;
+  --color-accent: #c8a86b;
+  --color-text: #eaf1f5;
+  --color-text-muted: #8fa3b0;
+  --color-border: #243643;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --size-h1: 4.25rem;
+  --size-h2: 2.5rem;
+  --size-h3: 1.375rem;
+  --size-body: 1.0625rem;
+  --size-small: 0.875rem;
+
+  --radius: 14px;
+  --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.55);
+}

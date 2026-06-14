@@ -1,0 +1,157 @@
+@use 'mixins' as *;
+
+#about {
+  .why-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--size-small);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0 0 1rem;
+  }
+
+  .why-heading {
+    font-family: var(--font-display);
+    font-size: var(--size-h2);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 4rem;
+    max-width: 560px;
+    line-height: 1.2;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+  }
+
+  // Frosted-glass cards
+  .why-prop {
+    position: relative;
+    padding: 2.25rem 2rem;
+    border-radius: var(--radius);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.018) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+
+    // Lit top edge — a glacier-blue highlight across the glass
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-primary) 65%, transparent) 50%, transparent);
+      opacity: 0.85;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+      box-shadow:
+        0 24px 50px -18px rgba(0, 0, 0, 0.72),
+        0 0 0 1px color-mix(in srgb, var(--color-accent) 28%, transparent),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
+
+    &:hover .why-icon {
+      border-color: color-mix(in srgb, var(--color-accent) 60%, transparent);
+      box-shadow:
+        0 0 26px -6px color-mix(in srgb, var(--color-accent) 55%, transparent),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    &:hover .why-icon svg {
+      stroke: var(--color-text);
+    }
+  }
+
+  @media (max-width: $bp-md) {
+    .why-heading {
+      font-size: clamp(1.6rem, 5vw, var(--size-h2));
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  @include reduce-motion {
+    .why-prop,
+    .why-icon {
+      transition: none;
+    }
+    .why-prop:hover {
+      transform: none;
+    }
+  }
+
+  // Outlined topographic numeral, sits behind the content
+  .why-numeral {
+    position: absolute;
+    top: -0.7rem;
+    right: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 6.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px color-mix(in srgb, var(--color-primary) 32%, transparent);
+    opacity: 0.55;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+
+  // Icon promoted to a glass tile
+  .why-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1.4rem;
+    border-radius: 14px;
+    background: linear-gradient(160deg, color-mix(in srgb, var(--color-primary) 20%, transparent), color-mix(in srgb, var(--color-surface) 70%, transparent));
+    border: 1px solid color-mix(in srgb, var(--color-accent) 28%, transparent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    position: relative;
+    z-index: 1;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+    svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--color-accent);
+      fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.22s ease;
+    }
+  }
+
+  .why-prop-heading {
+    font-family: var(--font-display);
+    font-size: var(--size-h3);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 0.65rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .why-prop-desc {
+    font-family: var(--font-body);
+    font-size: var(--size-small);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+}

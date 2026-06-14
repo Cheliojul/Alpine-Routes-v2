@@ -1,0 +1,24 @@
+// ── Breakpoints ───────────────────────────────────────────────
+$bp-actions: 560px;
+$bp-sm: 600px;
+$bp-hero: 640px;
+$bp-md: 700px;
+$bp-nav: 820px;
+
+// ── Helpers ───────────────────────────────────────────────────
+@mixin focus-ring($offset: 2px) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: $offset;
+}
+
+@mixin reduce-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin no-reduce-motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
