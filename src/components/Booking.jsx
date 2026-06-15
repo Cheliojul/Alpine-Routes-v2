@@ -1,28 +1,29 @@
+import BookingForm from './BookingForm';
+
 export default function Booking() {
   return (
     <section className="booking" id="book" aria-labelledby="booking-headline">
       <div className="container">
         <div className="booking__inner">
-          <span className="booking__eyebrow">Ready When You Land</span>
+          <span className="booking__eyebrow">Book a Transfer</span>
 
           <h2 className="booking__headline" id="booking-headline">
-            Tell us your flight.<br />We&apos;ll handle the mountain.
+            Tell us your route.<br />We&apos;ll handle the mountain.
           </h2>
 
           <p className="booking__sub">
-            Instant quotes, fixed prices, no surge for snow.
-            Most transfers confirmed within the hour.
+            Pick your pickup and destination, choose a date and time, and we&apos;ll
+            confirm by email — instant quotes, fixed prices, no surge for snow.
           </p>
 
-          <div className="booking__actions">
-            <a href="#" className="btn btn-primary">Book Your Transfer</a>
-            <span className="booking__phone">or call <a href="tel:+41279674040">+41 27 967 40 40</a></span>
-          </div>
+          <BookingForm />
+
+          <p className="booking__phone">or call <a href="tel:+41279674040">+41 27 967 40 40</a></p>
 
           <ul className="booking__trust">
             <li>Free cancellation 24h</li>
             <li>Flight tracking</li>
-            <li>Fixed CHF pricing</li>
+            <li>Fixed EUR pricing</li>
           </ul>
         </div>
       </div>

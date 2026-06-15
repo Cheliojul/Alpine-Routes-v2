@@ -149,3 +149,105 @@
     white-space: nowrap;
   }
 }
+
+// ── Booking form ──────────────────────────────────────────────
+.booking-form {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    &--full {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__label {
+    font-family: var(--font-body);
+    font-size: var(--size-small);
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: 0.01em;
+  }
+
+  input,
+  select {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: var(--size-body);
+    color: var(--color-text);
+    background: rgba(12, 22, 32, 0.55);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 0.7rem 0.85rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 30%, transparent);
+    }
+  }
+
+  // Native date/time pickers render in dark mode (light text + icons)
+  input[type='date'],
+  input[type='time'] {
+    color-scheme: dark;
+  }
+
+  // Custom caret for selects
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 2.25rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%238fa3b0' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  &__note {
+    font-family: var(--font-body);
+    font-size: var(--size-small);
+    color: var(--color-text);
+    opacity: 0.8;
+  }
+
+  @include reduce-motion {
+    input,
+    select {
+      transition: none;
+    }
+  }
+}
+
+.booking__phone {
+  margin: 1.5rem 0 0;
+}
+
+@media (max-width: $bp-actions) {
+  .booking-form__grid {
+    grid-template-columns: 1fr;
+  }
+}

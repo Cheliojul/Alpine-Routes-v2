@@ -12,6 +12,7 @@ export default function RouteCard({ route }) {
     originLabelY,
     destLabelY,
     duration,
+    distance,
     price,
   } = route;
 
@@ -38,12 +39,22 @@ export default function RouteCard({ route }) {
         <text x="212" y={destLabelY} textAnchor="middle" className="elev-label">{destLabel}</text>
       </svg>
       <div className="route-card__meta">
-        <span className="route-card__duration">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
-          </svg>
-          {duration}
+        <span className="route-card__stats">
+          <span className="route-card__stat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            {duration}
+          </span>
+          <span className="route-card__stat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="6" cy="19" r="2" />
+              <circle cx="18" cy="5" r="2" />
+              <path d="M7.5 17.5 16.5 6.5" />
+            </svg>
+            {distance}
+          </span>
         </span>
         <span className="route-card__price">from <span className="route-card__price-num">{price}</span></span>
       </div>

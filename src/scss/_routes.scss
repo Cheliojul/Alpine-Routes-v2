@@ -99,7 +99,14 @@
     flex-wrap: wrap;
   }
 
-  .route-card__duration {
+  .route-card__stats {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .route-card__stat {
     display: flex;
     align-items: center;
     gap: 6px;

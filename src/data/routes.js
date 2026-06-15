@@ -1,4 +1,4 @@
-// Featured transfers. Each route drives one <route-card> partial.
+// Featured transfers. Each route drives one <RouteCard> component.
 // The elevation profile SVG is proportional to the real altitude climb
 // from valley origin to alpine destination (the site's signature element).
 export const routes = [
@@ -15,7 +15,8 @@ export const routes = [
     originLabelY: 67,
     destLabelY: 9,
     duration: '2h 10m',
-    price: 'CHF 290',
+    distance: '244 km',
+    price: 'EUR 299',
   },
   {
     name: 'Geneva Airport → Verbier',
@@ -30,7 +31,8 @@ export const routes = [
     originLabelY: 68,
     destLabelY: 10,
     duration: '1h 45m',
-    price: 'CHF 240',
+    distance: '160 km',
+    price: 'EUR 249',
   },
   {
     name: 'Innsbruck → Kitzbühel',
@@ -45,7 +47,8 @@ export const routes = [
     originLabelY: 56,
     destLabelY: 30,
     duration: '1h 05m',
-    price: 'CHF 180',
+    distance: '95 km',
+    price: 'EUR 189',
   },
   {
     name: 'Milan Malpensa → Livigno',
@@ -60,6 +63,7 @@ export const routes = [
     originLabelY: 68,
     destLabelY: 7,
     duration: '3h 30m',
-    price: 'CHF 320',
+    distance: '215 km',
+    price: 'EUR 339',
   },
 ];
