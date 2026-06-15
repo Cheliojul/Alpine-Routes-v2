@@ -2,16 +2,18 @@
   "name": "alpine-routes-v2",
   "private": true,
   "version": "2.0.0",
-  "type": "module",
-  "description": "Alpine Routes — premium mountain transfer landing page (Vite + SCSS, componentized).",
+  "description": "Alpine Routes — premium mountain transfer landing page (Next.js + SCSS, JSX components).",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "devDependencies": {
-    "sass": "^1.101.0",
-    "vite": "^8.0.16",
-    "vite-plugin-handlebars": "^2.0.3"
+    "sass": "^1.101.0"
+  },
+  "dependencies": {
+    "next": "^16.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   }
 }

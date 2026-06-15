@@ -1,46 +1,47 @@
 # Alpine Routes — v2
 
-Premium mountain transport & transfer company landing page, built with **Vite** and **SCSS**, split into reusable components.
+Premium mountain transport & transfer company landing page, built with **Next.js** (App Router) and **SCSS**, composed from **JSX components**.
 
 Live: **https://cheliojul.github.io/Alpine-Routes-v2/**
 
 ## Stack
-- **Vite** — dev server, HMR, production build
-- **SCSS** — component-scoped partials compiled via Dart Sass
-- **Handlebars partials** (`vite-plugin-handlebars`) — reusable HTML components, no client framework
-- Vanilla JS modules for interactivity (nav, scroll reveal, hero parallax, snow)
+- **Next.js** (App Router) — JSX components, static HTML export (`output: 'export'`)
+- **SCSS** — component-scoped partials compiled by Dart Sass (Next built-in)
+- Vanilla JS effect modules (nav, scroll reveal, hero parallax, snow) run from a
+  single `'use client'` effects runner after hydration
 
 ## Project structure
 ```
-index.html              # entry: composes partials via {{> name }}
-vite.config.js          # base path + handlebars partials/data
+next.config.mjs         # static export + basePath for GitHub Pages
 src/
-  main.js               # imports styles + wires up JS modules
-  data/routes.js        # featured-route data (drives the route-card component)
-  partials/             # HTML components
-    nav.html  hero.html  routes.html  route-card.html
-    why.html  booking.html  footer.html
-  scss/                 # styles, grouped by component
-    main.scss           # @use's every partial in order
-    _mixins.scss  _tokens.scss  _base.scss  _buttons.scss
-    _nav.scss  _hero.scss  _routes.scss  _why.scss  _booking.scss  _footer.scss
-  js/                   # behaviour modules
+  app/
+    layout.jsx           # <html>, fonts, global SCSS import, metadata
+    page.jsx             # composes the components
+  components/            # JSX components
+    Nav.jsx  Hero.jsx  Routes.jsx  RouteCard.jsx
+    Why.jsx  Booking.jsx  Footer.jsx
+    ClientEffects.jsx    # 'use client' — wires up the JS modules
+  data/routes.js         # featured-route data (drives <RouteCard>)
+  js/                    # behaviour modules
     nav.js  reveal.js  parallax.js  snow.js
-.github/workflows/deploy.yml   # builds + deploys to GitHub Pages
+  scss/                  # styles, grouped by component
+    main.scss  _mixins.scss  _tokens.scss  _base.scss  _buttons.scss
+    _nav.scss  _hero.scss  _routes.scss  _why.scss  _booking.scss  _footer.scss
+public/.nojekyll
+.github/workflows/deploy.yml   # builds + deploys the export to GitHub Pages
 ```
 
 ## Develop
 ```bash
 npm install
-npm run dev      # http://localhost:5173/Alpine-Routes-v2/
+npm run dev      # http://localhost:3000
 ```
 
 ## Build
 ```bash
-npm run build    # outputs to dist/
-npm run preview  # preview the production build
+npm run build    # static export -> out/
 ```
 
 ## Deploy
-Pushing to `main` triggers the GitHub Actions workflow, which builds the site
-and deploys `dist/` to GitHub Pages automatically.
+Pushing to `main` triggers the GitHub Actions workflow, which runs the Next.js
+static export and deploys `out/` to GitHub Pages automatically.
