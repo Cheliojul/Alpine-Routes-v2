@@ -29,13 +29,27 @@
     width: 100%;
     height: auto;
     overflow: visible;
+    // Faint backdrop. Group opacity composites the opaque layers first,
+    // then fades the whole range — so overlaps never band.
+    opacity: 0.35;
   }
 
-  &__ridge-back {
-    fill: color-mix(in srgb, var(--color-surface) 55%, #060d13 45%);
+  // Solid grayscale alpine range — depth comes from shade, not alpha.
+  &__range--1 {
+    fill: #8b9096;
   }
-  &__ridge-front {
-    fill: color-mix(in srgb, var(--color-surface) 80%, #060d13 20%);
+  &__range--2 {
+    fill: #6d7378;
+  }
+  &__range--3 {
+    fill: #4f555a;
+  }
+  &__range--4 {
+    fill: #34393e;
+  }
+
+  &__snowcap {
+    fill: #dcdee0;
   }
 
   // Parallax: JS sets --px/--py per layer; smoothed via transition

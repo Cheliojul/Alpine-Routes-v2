@@ -3,9 +3,26 @@ export default function Hero() {
     <section className="hero" id="hero">
       <div className="hero__bg" aria-hidden="true">
         <div className="hero__glow hero__layer" data-depth="14"></div>
-        <svg className="hero__mountains" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-          <path className="hero__ridge-back hero__layer" data-depth="26" d="M0,320 L0,210 L80,175 L160,190 L240,130 L320,155 L400,90 L480,115 L560,70 L620,88 L680,45 L740,68 L800,95 L880,60 L940,80 L1020,40 L1080,65 L1140,100 L1220,75 L1300,110 L1380,90 L1440,105 L1440,320 Z" />
-          <path className="hero__ridge-front hero__layer" data-depth="52" d="M0,320 L0,260 L60,245 L120,255 L200,220 L280,238 L360,195 L440,215 L500,180 L560,200 L620,165 L700,185 L760,155 L820,172 L900,140 L960,160 L1040,130 L1100,148 L1160,175 L1240,155 L1320,180 L1380,165 L1440,175 L1440,320 Z" />
+        <svg className="hero__mountains" viewBox="0 0 1440 460" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+          {/* Farthest range — lightest, recedes into haze */}
+          <g className="hero__layer" data-depth="14">
+            <path className="hero__range hero__range--1" d="M0,460 L0,210 L180,180 L380,215 L560,165 L760,205 L960,160 L1180,200 L1330,170 L1440,195 L1440,460 Z" />
+          </g>
+
+          <g className="hero__layer" data-depth="24">
+            <path className="hero__range hero__range--2" d="M0,460 L0,260 L160,235 L340,270 L520,210 L700,265 L900,215 L1080,260 L1280,220 L1440,255 L1440,460 Z" />
+          </g>
+
+          <g className="hero__layer" data-depth="38">
+            <path className="hero__range hero__range--3" d="M0,460 L0,320 L150,300 L320,250 L470,310 L650,260 L840,320 L1020,265 L1220,315 L1380,275 L1440,300 L1440,460 Z" />
+          </g>
+
+          {/* Nearest massif — two snow-capped summits */}
+          <g className="hero__layer" data-depth="56">
+            <path className="hero__range hero__range--4" d="M0,460 L0,382 L150,362 L320,332 L470,190 L600,330 L740,300 L860,332 L1000,210 L1140,318 L1280,330 L1400,300 L1440,318 L1440,460 Z" />
+            <path className="hero__snowcap" d="M470,190 L537,262 L516,252 L497,264 L478,250 L458,264 L438,252 L394,262 Z" />
+            <path className="hero__snowcap" d="M1000,210 L1091,280 L1070,271 L1050,283 L1030,269 L1009,283 L988,271 L920,280 Z" />
+          </g>
         </svg>
         <canvas className="hero__snow"></canvas>
       </div>
