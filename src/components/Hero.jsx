@@ -3,23 +3,25 @@ export default function Hero() {
     <section className="hero" id="hero">
       <div className="hero__bg" aria-hidden="true">
         <div className="hero__glow hero__layer" data-depth="14"></div>
+        {/* Paths are overscanned (x: -160..1600, bottom: 600) so parallax never
+            exposes a layer edge at the viewport border; the hero clips the excess. */}
         <svg className="hero__mountains" viewBox="0 0 1440 460" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
           {/* Farthest range — lightest, recedes into haze */}
           <g className="hero__layer" data-depth="14">
-            <path className="hero__range hero__range--1" d="M0,460 L0,210 L180,180 L380,215 L560,165 L760,205 L960,160 L1180,200 L1330,170 L1440,195 L1440,460 Z" />
+            <path className="hero__range hero__range--1" d="M-160,600 L-160,210 L180,180 L380,215 L560,165 L760,205 L960,160 L1180,200 L1330,170 L1600,195 L1600,600 Z" />
           </g>
 
           <g className="hero__layer" data-depth="24">
-            <path className="hero__range hero__range--2" d="M0,460 L0,260 L160,235 L340,270 L520,210 L700,265 L900,215 L1080,260 L1280,220 L1440,255 L1440,460 Z" />
+            <path className="hero__range hero__range--2" d="M-160,600 L-160,260 L160,235 L340,270 L520,210 L700,265 L900,215 L1080,260 L1280,220 L1600,255 L1600,600 Z" />
           </g>
 
           <g className="hero__layer" data-depth="38">
-            <path className="hero__range hero__range--3" d="M0,460 L0,320 L150,300 L320,250 L470,310 L650,260 L840,320 L1020,265 L1220,315 L1380,275 L1440,300 L1440,460 Z" />
+            <path className="hero__range hero__range--3" d="M-160,600 L-160,320 L150,300 L320,250 L470,310 L650,260 L840,320 L1020,265 L1220,315 L1380,275 L1600,300 L1600,600 Z" />
           </g>
 
           {/* Nearest massif — two snow-capped summits */}
           <g className="hero__layer" data-depth="56">
-            <path className="hero__range hero__range--4" d="M0,460 L0,382 L150,362 L320,332 L470,190 L600,330 L740,300 L860,332 L1000,210 L1140,318 L1280,330 L1400,300 L1440,318 L1440,460 Z" />
+            <path className="hero__range hero__range--4" d="M-160,600 L-160,382 L150,362 L320,332 L470,190 L600,330 L740,300 L860,332 L1000,210 L1140,318 L1280,330 L1400,300 L1600,318 L1600,600 Z" />
             <path className="hero__snowcap" d="M470,190 L537,262 L516,252 L497,264 L478,250 L458,264 L438,252 L394,262 Z" />
             <path className="hero__snowcap" d="M1000,210 L1091,280 L1070,271 L1050,283 L1030,269 L1009,283 L988,271 L920,280 Z" />
           </g>
