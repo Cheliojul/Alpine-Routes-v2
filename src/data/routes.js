@@ -1,9 +1,12 @@
 // Featured transfers. Each route drives one <RouteCard> component.
+// `from`/`to` match the booking form's select options so "Reserve" can prefill it.
 // The elevation profile SVG is proportional to the real altitude climb
 // from valley origin to alpine destination (the site's signature element).
 export const routes = [
   {
     name: 'Zürich Airport → Zermatt',
+    from: 'Zürich Airport',
+    to: 'Zermatt',
     reserve: 'Zürich Airport to Zermatt',
     gradId: 'fill-grad-1',
     fillPath: 'M28,57 C80,57 130,12 212,12 L212,65 L28,65 Z',
@@ -20,6 +23,8 @@ export const routes = [
   },
   {
     name: 'Geneva Airport → Verbier',
+    from: 'Geneva Airport',
+    to: 'Verbier',
     reserve: 'Geneva Airport to Verbier',
     gradId: 'fill-grad-2',
     fillPath: 'M28,58 C85,58 135,13 212,13 L212,65 L28,65 Z',
@@ -36,6 +41,8 @@ export const routes = [
   },
   {
     name: 'Innsbruck → Kitzbühel',
+    from: 'Innsbruck',
+    to: 'Kitzbühel',
     reserve: 'Innsbruck to Kitzbühel',
     gradId: 'fill-grad-3',
     fillPath: 'M28,46 C100,46 150,33 212,33 L212,65 L28,65 Z',
@@ -52,6 +59,8 @@ export const routes = [
   },
   {
     name: 'Milan Malpensa → Livigno',
+    from: 'Milan Malpensa',
+    to: 'Livigno',
     reserve: 'Milan Malpensa to Livigno',
     gradId: 'fill-grad-4',
     fillPath: 'M28,61 C75,61 125,9 212,9 L212,65 L28,65 Z',

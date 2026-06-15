@@ -1,19 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const ORIGINS = ['Zürich Airport', 'Geneva Airport', 'Innsbruck', 'Milan Malpensa'];
 const DESTINATIONS = ['Zermatt', 'Verbier', 'Kitzbühel', 'Livigno'];
 const BOOKING_EMAIL = 'transfers@alpineroutes.ch';
 
 export default function BookingForm() {
+  const [from, setFrom] = useState('');
+  const [to, setTo] = useState('');
   const [sent, setSent] = useState(false);
+
+  // Clicking a route card's "Reserve" link prefills this form.
+  useEffect(() => {
+    function onClick(event) {
+      const trigger = event.target.closest('[data-route-from]');
+      if (!trigger) return;
+      setFrom(trigger.getAttribute('data-route-from') || '');
+      setTo(trigger.getAttribute('data-route-to') || '');
+    }
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
 
   function handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const from = data.get('from');
-    const to = data.get('to');
     const date = data.get('date');
     const time = data.get('time');
     const passengers = data.get('passengers');
@@ -46,7 +58,7 @@ export default function BookingForm() {
       <div className="booking-form__grid">
         <label className="booking-form__field">
           <span className="booking-form__label">From (A)</span>
-          <select name="from" required defaultValue="">
+          <select name="from" required value={from} onChange={(e) => setFrom(e.target.value)}>
             <option value="" disabled>Select pickup</option>
             {ORIGINS.map((o) => (
               <option key={o} value={o}>{o}</option>
@@ -56,7 +68,7 @@ export default function BookingForm() {
 
         <label className="booking-form__field">
           <span className="booking-form__label">To (B)</span>
-          <select name="to" required defaultValue="">
+          <select name="to" required value={to} onChange={(e) => setTo(e.target.value)}>
             <option value="" disabled>Select destination</option>
             {DESTINATIONS.map((d) => (
               <option key={d} value={d}>{d}</option>

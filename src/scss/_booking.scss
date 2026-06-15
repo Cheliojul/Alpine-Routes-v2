@@ -209,6 +209,17 @@
     color-scheme: dark;
   }
 
+  // Keep browser-autofilled fields on the dark theme (no white background)
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--color-text);
+    -webkit-box-shadow: 0 0 0 1000px rgba(12, 22, 32, 0.55) inset;
+    caret-color: var(--color-text);
+    transition: background-color 9999s ease-out 0s;
+  }
+
   // Custom caret for selects
   select {
     appearance: none;
@@ -223,8 +234,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    gap: 0.85rem 1.25rem;
+    margin-top: 1.75rem;
   }
 
   &__note {

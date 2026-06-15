@@ -1,6 +1,8 @@
 export default function RouteCard({ route }) {
   const {
     name,
+    from,
+    to,
     reserve,
     gradId,
     fillPath,
@@ -58,7 +60,15 @@ export default function RouteCard({ route }) {
         </span>
         <span className="route-card__price">from <span className="route-card__price-num">{price}</span></span>
       </div>
-      <a href="#book" className="route-card__cta btn-secondary" aria-label={`Reserve ${reserve} transfer`}>Reserve →</a>
+      <a
+        href="#book"
+        className="route-card__cta btn-secondary"
+        data-route-from={from}
+        data-route-to={to}
+        aria-label={`Reserve ${reserve} transfer`}
+      >
+        Reserve →
+      </a>
     </article>
   );
 }
