@@ -2,7 +2,7 @@
   "name": "alpine-routes-v2",
   "private": true,
   "version": "2.0.0",
-  "description": "Alpine Routes — premium mountain transfer landing page (Next.js + SCSS, JSX components).",
+  "description": "Alpine Routes — mountain transfer landing page (Next.js + SCSS, JSX components).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

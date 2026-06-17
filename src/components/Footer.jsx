@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="footer__wordmark">Alpine Routes</span>
             </div>
             <p className="footer__tagline">Premium alpine transfers since 2009.</p>
-            <p className="footer__concession">Concession No. CH-9402, Valais.</p>
+            <p className="footer__concession">Reg. No. 000000, Region.</p>
           </div>
 
           <div className="footer__col">
@@ -40,9 +40,9 @@ export default function Footer() {
           <div className="footer__col">
             <h3 className="footer__heading">Contact</h3>
             <address className="footer__address">
-              <p>Bahnhofstrasse 12<br />3920 Zermatt, CH</p>
-              <p><a href="tel:+41279674040">+41 27 967 40 40</a></p>
-              <p><a href="mailto:transfers@alpineroutes.ch">transfers@alpineroutes.ch</a></p>
+              <p>123 Example Street<br />00000 City, Country</p>
+              <p><a href="tel:+000000000000">+00 000 000 0000</a></p>
+              <p><a href="mailto:email@email.com">email@email.com</a></p>
             </address>
           </div>
 

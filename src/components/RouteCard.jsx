@@ -1,3 +1,22 @@
+// Altitude range across all routes, used to scale every elevation profile
+// on the same vertical axis (so steeper climbs read as steeper lines).
+const GLOBAL_MIN = 234;
+const GLOBAL_MAX = 1816;
+
+// Padded chart box so dots and labels never touch the card edges.
+const W = 240;
+const H = 96;
+const OX = 34;
+const DX = 206;
+const PLOT_TOP = 36;
+const PLOT_BOTTOM = 72;
+const BASELINE = 80;
+
+function altToY(alt) {
+  const frac = (alt - GLOBAL_MIN) / (GLOBAL_MAX - GLOBAL_MIN);
+  return Math.round((PLOT_BOTTOM - frac * (PLOT_BOTTOM - PLOT_TOP)) * 10) / 10;
+}
+
 export default function RouteCard({ route }) {
   const {
     name,
@@ -5,25 +24,24 @@ export default function RouteCard({ route }) {
     to,
     reserve,
     gradId,
-    fillPath,
-    linePath,
-    originY,
-    destY,
     originLabel,
     destLabel,
-    originLabelY,
-    destLabelY,
     duration,
     distance,
     price,
   } = route;
+
+  const oy = altToY(parseInt(originLabel, 10));
+  const dy = altToY(parseInt(destLabel, 10));
+  const linePath = `M${OX},${oy} C${OX + 62},${oy} ${DX - 62},${dy} ${DX},${dy}`;
+  const areaPath = `${linePath} L${DX},${BASELINE} L${OX},${BASELINE} Z`;
 
   return (
     <article className="route-card">
       <h3 className="route-card__name">{name}</h3>
       <svg
         className="elev"
-        viewBox="0 0 240 70"
+        viewBox={`0 0 ${W} ${H}`}
         aria-label={`Elevation profile from ${originLabel} to ${destLabel}`}
         role="img"
       >
@@ -33,12 +51,12 @@ export default function RouteCard({ route }) {
             <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0.02" />
           </linearGradient>
         </defs>
-        <path className="elev-fill" d={fillPath} fill={`url(#${gradId})`} />
+        <path className="elev-fill" d={areaPath} fill={`url(#${gradId})`} />
         <path className="elev-line" d={linePath} fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="28" cy={originY} r="3.5" fill="var(--color-accent)" />
-        <circle cx="212" cy={destY} r="3.5" fill="var(--color-accent)" />
-        <text x="28" y={originLabelY} textAnchor="middle" className="elev-label">{originLabel}</text>
-        <text x="212" y={destLabelY} textAnchor="middle" className="elev-label">{destLabel}</text>
+        <circle cx={OX} cy={oy} r="3.5" fill="var(--color-accent)" />
+        <circle cx={DX} cy={dy} r="3.5" fill="var(--color-accent)" />
+        <text x={OX} y={oy + 16} textAnchor="middle" className="elev-label">{originLabel}</text>
+        <text x={DX} y={dy - 10} textAnchor="middle" className="elev-label">{destLabel}</text>
       </svg>
       <div className="route-card__meta">
         <span className="route-card__stats">

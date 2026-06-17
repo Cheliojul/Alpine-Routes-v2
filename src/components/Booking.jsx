@@ -18,7 +18,7 @@ export default function Booking() {
 
           <BookingForm />
 
-          <p className="booking__phone">or call <a href="tel:+41279674040">+41 27 967 40 40</a></p>
+          <p className="booking__phone">or call <a href="tel:+000000000000">+00 000 000 0000</a></p>
 
           <ul className="booking__trust">
             <li>Free cancellation 24h</li>

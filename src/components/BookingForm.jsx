@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 const ORIGINS = ['Zürich Airport', 'Geneva Airport', 'Innsbruck', 'Milan Malpensa'];
 const DESTINATIONS = ['Zermatt', 'Verbier', 'Kitzbühel', 'Livigno'];
-const BOOKING_EMAIL = 'transfers@alpineroutes.ch';
+const BOOKING_EMAIL = 'email@email.com';
 
 export default function BookingForm() {
   const [from, setFrom] = useState('');
@@ -43,7 +43,7 @@ export default function BookingForm() {
       `Time: ${time}`,
       `Passengers: ${passengers}`,
       '',
-      'Sent from alpineroutes.ch',
+      'Sent from example.com',
     ].join('\n');
 
     // No backend yet — hand the request to the visitor's email client.
@@ -97,12 +97,12 @@ export default function BookingForm() {
 
         <label className="booking-form__field">
           <span className="booking-form__label">Your name</span>
-          <input type="text" name="name" autoComplete="name" placeholder="Jane Doe" required />
+          <input type="text" name="name" autoComplete="name" placeholder="Full name" required />
         </label>
 
         <label className="booking-form__field booking-form__field--full">
           <span className="booking-form__label">Email</span>
-          <input type="email" name="email" autoComplete="email" placeholder="you@example.com" required />
+          <input type="email" name="email" autoComplete="email" placeholder="email@email.com" required />
         </label>
       </div>
 
