@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="footer" id="contact">
@@ -20,19 +22,19 @@ export default function Footer() {
           <div className="footer__col">
             <h3 className="footer__heading">Routes</h3>
             <ul className="footer__links">
-              <li><a href="#routes">Zürich → Zermatt</a></li>
-              <li><a href="#routes">Geneva → Verbier</a></li>
-              <li><a href="#routes">Innsbruck → Kitzbühel</a></li>
-              <li><a href="#routes">Milan → Livigno</a></li>
+              <li><Link href="/#routes">Zürich → Zermatt</Link></li>
+              <li><Link href="/#routes">Geneva → Verbier</Link></li>
+              <li><Link href="/#routes">Innsbruck → Kitzbühel</Link></li>
+              <li><Link href="/#routes">Milan → Livigno</Link></li>
             </ul>
           </div>
 
           <div className="footer__col">
             <h3 className="footer__heading">Company</h3>
             <ul className="footer__links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#about">Fleet</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link href="/#about">About</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/#contact">Contact</Link></li>
               <li><a href="#">Careers</a></li>
             </ul>
           </div>
@@ -51,7 +53,7 @@ export default function Footer() {
         <div className="footer__bottom">
           <p className="footer__copy">© 2026 Alpine Routes AG. All rights reserved.</p>
           <nav className="footer__legal" aria-label="Legal">
-            <a href="#">Privacy</a>
+            <Link href="/privacy">Privacy</Link>
             <span aria-hidden="true">·</span>
             <a href="#">Terms</a>
             <span aria-hidden="true">·</span>

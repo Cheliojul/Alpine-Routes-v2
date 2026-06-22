@@ -247,6 +247,22 @@
     opacity: 0.8;
   }
 
+  &__error {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--color-danger);
+  }
+
+  input[aria-invalid='true'],
+  select[aria-invalid='true'] {
+    border-color: var(--color-danger);
+
+    &:focus-visible {
+      border-color: var(--color-danger);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-danger) 28%, transparent);
+    }
+  }
+
   @include reduce-motion {
     input,
     select {

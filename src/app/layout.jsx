@@ -1,5 +1,9 @@
 import '../scss/main.scss';
 
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+import ClientEffects from '../components/ClientEffects';
+
 export const metadata = {
   title: 'Alpine Routes | Premium Alpine Transfers',
   description:
@@ -18,7 +22,12 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Nav />
+        <main>{children}</main>
+        <Footer />
+        <ClientEffects />
+      </body>
     </html>
   );
 }
