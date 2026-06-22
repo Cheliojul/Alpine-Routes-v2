@@ -110,7 +110,7 @@ export default function BookingForm() {
         <button type="submit" className="btn btn-primary">Request Transfer</button>
         <span className="booking-form__note" role="status" aria-live="polite">
           {sent
-            ? 'Opening your email app — just hit send.'
+            ? 'Opening your email app, just hit send.'
             : 'We’ll confirm by email, usually within the hour.'}
         </span>
       </div>

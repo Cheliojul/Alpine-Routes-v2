@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="container hero__content">
         <p className="hero__eyebrow">ALPINE TRANSFERS · SINCE 2009</p>
         <h1 className="hero__headline">Valley to summit,<br />on the minute.</h1>
-        <p className="hero__sub">Private airport shuttles and ski-resort transfers across the Alps — chauffeured, weather-ready, and timed to your flight, not ours.</p>
+        <p className="hero__sub">Private airport shuttles and ski-resort transfers across the Alps. Chauffeured, weather-ready, and timed to your flight, not ours.</p>
         <div className="hero__cta">
           <a href="#book" className="btn btn-primary">Book a Transfer</a>
           <a href="#routes" className="btn btn-secondary">View Routes</a>

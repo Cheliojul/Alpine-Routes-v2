@@ -1,9 +1,9 @@
 import '../scss/main.scss';
 
 export const metadata = {
-  title: 'Alpine Routes — Premium Alpine Transfers',
+  title: 'Alpine Routes | Premium Alpine Transfers',
   description:
-    'Alpine Routes — premium private airport shuttles and ski-resort transfers across the Alps. Chauffeured, weather-ready, and timed to your flight.',
+    'Alpine Routes. Premium private airport shuttles and ski-resort transfers across the Alps. Chauffeured, weather-ready, and timed to your flight.',
 };
 
 export default function RootLayout({ children }) {

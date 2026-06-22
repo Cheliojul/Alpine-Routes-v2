@@ -13,7 +13,7 @@ export default function Booking() {
 
           <p className="booking__sub">
             Pick your pickup and destination, choose a date and time, and we&apos;ll
-            confirm by email — instant quotes, fixed prices, no surge for snow.
+            confirm by email. Instant quotes, fixed prices, no surge for snow.
           </p>
 
           <BookingForm />

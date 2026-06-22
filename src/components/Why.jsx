@@ -18,7 +18,7 @@ export default function Why() {
               </svg>
             </div>
             <h3 className="why-prop-heading">On the minute, every time.</h3>
-            <p className="why-prop-desc">We track your flight in real time and adjust pickup for delays, customs, and weather — you never wait, and you never miss a transfer.</p>
+            <p className="why-prop-desc">We track your flight in real time and adjust pickup for delays, customs, and weather, so you never wait and never miss a transfer.</p>
           </div>
 
           <div className="why-prop">
@@ -50,7 +50,7 @@ export default function Why() {
               </svg>
             </div>
             <h3 className="why-prop-heading">Vehicles built for altitude.</h3>
-            <p className="why-prop-desc">Heated leather, ski storage, child seats on request, and AWD fleets serviced for snow — comfort that holds from valley floor to resort.</p>
+            <p className="why-prop-desc">Heated leather, ski storage, child seats on request, and AWD fleets serviced for snow. Comfort that holds from valley floor to resort.</p>
           </div>
 
         </div>
